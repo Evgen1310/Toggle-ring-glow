@@ -1,0 +1,10 @@
+﻿{
+	"Name": "Toggle Ring Glow",
+	"Author": "Evgen1310",
+	"Version": "1.0.0",
+	"Description": "Toggle ring glow effects on or off with a single keypress.",
+	"UniqueID": "Evgen1310.ToggleRingGlow",
+	"EntryDll": "ToggleRingGlow.dll",
+	"MinimumApiVersion": "4.0.0",
+	"UpdateKeys": [ "Nexus:46593" ]
+}
