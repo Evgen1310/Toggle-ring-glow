@@ -10,7 +10,8 @@ namespace ToggleRingGlow
     {
         public static bool Rings_Update_Prefix(Ring __instance, string? ___lightSourceId, GameTime time, GameLocation environment, Farmer who)
         {
-            var fields = AccessTools.GetFieldNames(typeof(Ring));
+            if (__instance is CombinedRing)
+                return true;
             if (_instance.glowRings)
             {
                 if (___lightSourceId is null)
