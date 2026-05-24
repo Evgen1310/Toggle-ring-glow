@@ -26,7 +26,6 @@ namespace ToggleRingGlow
               prefix: new HarmonyMethod(typeof(ModEntry), nameof(Rings_Update_Prefix))
             );
         }
-
         private void OnButtonPressed(object? sender, ButtonPressedEventArgs e)
         {
             if (!Context.IsWorldReady)

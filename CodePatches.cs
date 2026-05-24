@@ -1,4 +1,6 @@
-﻿using Microsoft.Xna.Framework;
+﻿using HarmonyLib;
+using Microsoft.Xna.Framework;
+using StardewModdingAPI;
 using StardewValley;
 using StardewValley.Objects;
 
@@ -8,19 +10,18 @@ namespace ToggleRingGlow
     {
         public static bool Rings_Update_Prefix(Ring __instance, string? ___lightSourceId, GameTime time, GameLocation environment, Farmer who)
         {
-            bool ifGlow = _instance.glowRings;
-            if (ifGlow)
+            var fields = AccessTools.GetFieldNames(typeof(Ring));
+            if (_instance.glowRings)
             {
-                if (!environment.hasLightSource(___lightSourceId))
+                if (___lightSourceId is null)
                 {
                     __instance.onEquip(who);
-                    return false;
                 }
                 return true;
             }
             else
             {
-                if (environment.hasLightSource(___lightSourceId))
+                if (___lightSourceId is not null)
                 {
                     __instance.onUnequip(who);
                 }
